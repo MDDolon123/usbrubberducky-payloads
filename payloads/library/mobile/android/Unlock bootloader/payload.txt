@@ -1,0 +1,6 @@
+Reboot bootloader
+./fastboot oem get_identifier_token
+./signidentifier_unlockbootloader.sh XXXXXXXXXXXXXXXXXXXXXXXX rsa4096_vbmeta.pem
+signature.bin
+./fastboot flashing unlock_bootloader signature.bin
+fastboot --disable-verity --disable-verification flash vbmeta
